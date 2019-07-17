@@ -1,6 +1,6 @@
 from flask_restful import Resource
 
-todos = [
+urls = [
   {
     "id": 1,
     "item": "Create sample app",
@@ -18,7 +18,7 @@ todos = [
   }
 ]
 
-class Todo(Resource):
+class UrlScrapper(Resource):
   def get(self, id):
     for todo in todos:
       if(id == todo["id"]):
