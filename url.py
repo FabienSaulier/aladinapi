@@ -7,6 +7,7 @@ from flask import  request
 import requests
 import time
 
+
 class Url(Resource):
 
   def get(self):
