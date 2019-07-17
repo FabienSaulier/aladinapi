@@ -93,8 +93,11 @@ def scrapeAmazon(url):
   soup = getBeautifulSoup(url)
   data_metrics = soup.find("div", id="cerberus-data-metrics")
 
-  the_price = data_metrics.get('data-asin-price')
-  the_priceCurrency = data_metrics.get('data-asin-currency-code')
+  the_price = "0.00"
+  the_priceCurrency= "EUR"
+  if data_metrics is not None:
+    the_price = data_metrics.get('data-asin-price')
+    the_priceCurrency = data_metrics.get('data-asin-currency-code')
   the_description = soup.find("meta", attrs={'name': 'description'}).get('content')
   the_title = soup.find("meta", attrs={'name': 'title'}).get('content')
   the_url = url
