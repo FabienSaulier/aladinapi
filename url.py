@@ -1,6 +1,5 @@
 from flask_restful import Resource
 from bs4 import BeautifulSoup
-import re
 import json
 from flask import  request
 import requests
@@ -93,5 +92,7 @@ def scrape(url):
   if 'castorama.fr' in url:
     data = scrapeCastorama(url)
   elif 'leroymerlin.fr' in url:
+    data = scrapeLeroyMerlin(url)
+  elif 'leroymerlin.es' in url:
     data = scrapeLeroyMerlin(url)
   return data
